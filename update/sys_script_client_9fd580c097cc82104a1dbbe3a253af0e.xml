@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description> Automatically setValue to the ‘Requested for’ field when form is loaded (Only for new record creation)</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Use Case 2 - onLoad</name>
+        <order>2</order>
+        <script><![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+// 	---------------
+// 	Client Script to set the current logged in user..
+// 	---------------
+// 	if(g_form.isNewRecord()){
+// 	var id = g_user.userID;
+// 	var name = g_user.getFullName();
+// 	g_form.setValue('u_requested_for', id, name);
+	
+// 	}
+// // 	---------------------------------
+// // 	Client Script to set another user based on sys_ID - Neymar
+// // 	---------------------------------
+	
+// 	if(g_form.isNewRecord()){
+	var user_id = '4ea69bf29727b1104a1dbbe3a253afc8';
+// 	var user = new GlideRecord('sys_user');
+	
+// 	user.get(userId);
+// 	alert('Fetched user for requestedfield: ' + user.name);
+
+// 	g_form.setValue('u_requested_for', user_id, user.name);
+	
+// 	This one is not working need to check why..!
+		
+// 	}
+	
+	get();
+}
+function get(){
+	var ga = new GlideAjax('global.fetchOneUserRecord');
+	ga.addParam('sysparm_name', 'getUser');
+// 	ga.addParam('sys_id', userId);
+	ga.getXMLAnswer(response);
+}
+
+function response(r){
+// 	var r = JSON.parse(response);
+// 	alert(r);
+	var user = JSON.parse(r);
+	g_form.setValue('u_requested_for', user.userId, user.name);
+	
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-25 04:59:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9fd580c097cc82104a1dbbe3a253af0e</sys_id>
+        <sys_mod_count>38</sys_mod_count>
+        <sys_name>Use Case 2 - onLoad</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_client_9fd580c097cc82104a1dbbe3a253af0e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-26 07:59:55</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

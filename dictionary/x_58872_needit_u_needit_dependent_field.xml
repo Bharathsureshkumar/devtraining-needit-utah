@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="56ba64489740c2104a1dbbe3a253af44" label="Dependent Field" max_length="40" name="x_58872_needit_u_needit_dependent_field" type="collection">
+        <element choice="1" dependent="language" dependent_on_field="language" label="FrameWork" max_length="40" name="framework" type="choice" use_dependent_field="true">
+            <choice>
+                <element dependent_value="cSharp" inactive_on_update="false" label=".Net"/>
+                <element dependent_value="cpp" inactive_on_update="false" label="Ace" value="ace"/>
+                <element dependent_value="javaScript" inactive_on_update="false" label="Angular" value="angular"/>
+                <element dependent_value="cpp" inactive_on_update="false" label="ASIO" value="asio"/>
+                <element dependent_value="c" inactive_on_update="false" label="Awesome C" value="awesomeC"/>
+                <element dependent_value="cpp" inactive_on_update="false" label="Boost" value="boost"/>
+                <element dependent_value="python" inactive_on_update="false" label="Bottle" value="ottle"/>
+                <element dependent_value="python" inactive_on_update="false" label="CherryPy" value="cherryPy"/>
+                <element dependent_value="python" inactive_on_update="false" label="Django" value="django"/>
+                <element dependent_value="java" inactive_on_update="false" label="Dropwizard" value="dropWizard"/>
+                <element dependent_value="javaScript" inactive_on_update="false" label="Express JS" value="express js"/>
+                <element dependent_value="python" inactive_on_update="false" label="Flask" value="flask"/>
+                <element dependent_value="java" inactive_on_update="false" label="Hibernate" value="hibernate"/>
+                <element dependent_value="javaScript" inactive_on_update="false" label="Next JS" value="nextJS"/>
+                <element dependent_value="java" inactive_on_update="false" label="Spring Boot" value="springBoot"/>
+                <element dependent_value="java" inactive_on_update="false" label="Struts" value="struts"/>
+                <element dependent_value="python" inactive_on_update="false" label="Web2Py" value="web2py"/>
+            </choice>
+        </element>
+        <element choice="1" label="Language" max_length="40" name="language" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="C" value="c"/>
+                <element inactive_on_update="false" label="C#" value=".net"/>
+                <element inactive_on_update="false" label="C++" value="cpp"/>
+                <element inactive_on_update="false" label="Java" value="java"/>
+                <element inactive_on_update="false" label="Java Script" value="javaScript"/>
+                <element inactive_on_update="false" label="Python" value="python"/>
+            </choice>
+        </element>
+    </element>
+</database>
